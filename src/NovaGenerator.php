@@ -79,7 +79,7 @@ class NovaGenerator implements Generator
         $stub = str_replace('DummyClass', $model->name(), $stub);
         $stub = str_replace('DummyModel', '\\'.$model->fullyQualifiedClassName(), $stub);
         $stub = str_replace('// fields...', $data['fields'], $stub);
-        $stub = str_replace('use Illuminate\Http\Request;', implode(PHP_EOL, $data['imports']), $stub);
+        $stub = str_replace('use Laravel\Nova\Http\Requests\NovaRequest;', implode(PHP_EOL, $data['imports']), $stub);
 
         return $stub;
     }
