@@ -24,7 +24,7 @@ class AddRegularFields implements Task
             $fieldType = $this->fieldType($column->dataType());
             $imports[] = $fieldType;
 
-            $field = $fieldType."::make('".$this->fieldLabel($column->name())."')";
+            $field = $fieldType."::make(__('".$this->fieldLabel($column->name())."'), '".$column->name()."')";
             $field .= $this->addRules($column, $model->tableName());
 
             if ($column->dataType() === 'json') {

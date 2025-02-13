@@ -24,6 +24,6 @@ class AddIdentifierField implements Task
 
     private function identifierColumn(Model $model): Column
     {
-        return $model->columns()[$model->primaryKey()];
+        return collect($model->columns())->first();
     }
 }
